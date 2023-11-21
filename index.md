@@ -2,9 +2,9 @@
 
 This is my home page! My name is Juan Linares and I am a student at [Cal State Fullerton](http://www.fullerton.edu/) and my major is Computer Science.
 <details>
-<summary>Get to know more about me</summary>
+<summary>Get to know more about me!</summary>
 <br>
-I am a first generation college student. I immigrated to the United States with my dad and sister when I was only 2 years old from Peru. Since I moved to the US at such a young age I consider myself a Californian. For fun I love to play video games, go on hikes and make music. I also LOVE eating different cuisines. If you have not tried peruvian food, I strongly recommend it.
+I am a first generation college student. I immigrated from Peru to the United States with my dad and sister when I was only 2 years old. Since I moved to the US at such a young age I consider myself a Californian. For fun I love to play video games, go on hikes and make music. I also LOVE eating different cuisines. Some of my favorites are Indian food, Phillipino food and obviously Peruvian food.
 </details>
 
 ## Computer Science Projects
