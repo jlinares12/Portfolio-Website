@@ -1,10 +1,10 @@
 # Hello World
 
-This is my home page! My name is Juan Linares and I am a student at [Cal State Fullerton](http://www.fullerton.edu/) and my major is Computer Science.
+This is my home page! My name is Juan Linares. I am a student at [Cal State Fullerton](http://www.fullerton.edu/) and my major is Computer Science.
 <details>
 <summary>Get to know more about me!</summary>
 <br>
-I am a first generation college student. I immigrated from Peru to the United States with my dad and sister when I was only 2 years old. Since I moved to the US at such a young age I consider myself a Californian. For fun I love to play video games, go on hikes and make music. I also LOVE eating different cuisines. Some of my favorites are Indian food, Filipino food, and obviously Peruvian food.
+I am a first generation college student. I immigrated from Peru to the United States with my dad and sister when I was only 2 years old. Since I moved to the US at such a young age, I consider myself a Californian. For fun I love to play video games, go on hikes and make music. I also LOVE eating different cuisines. Some of my favorites are Indian food, Filipino food, and obviously Peruvian food.
 </details>
 
 ## Computer Science Projects
@@ -19,7 +19,7 @@ My GitHub page is http://github.com/jlinares12.
 
 * Lab 7
 
-    Lab 7, part 2 is another favorite because it was the first program I wrote that I could see would have realworld use. Figuring out where and when I can park within a city is a useful tool and being able to code a program that helps with this made me feel proud. In this program I had to figure out how to carefully use nested if statements.
+    Lab 7, part 2 is another favorite because it was the first program I wrote that I could see would have real-world use. Figuring out where and when I can park within a city is a useful tool and being able to code a program that helps with this made me feel proud. In this program I had to figure out how to carefully use nested if statements.
 
 * Lab 6
 
@@ -29,6 +29,6 @@ My GitHub page is http://github.com/jlinares12.
 
 ### Rock Paper Scissors
 
-* This was a personal project that I did on my own time. The purpose of this project was to get more exposure to makefiles. The program is a basic rock paper scissor game that takes command line arguments and determines which player wins. However I also created the makefile that allowed me to compile a header file and two cc files. The link to this repository is [here][def]
+* This was a personal project that I did on my own time. The purpose of this project was to get more exposure to makefiles. The program is a basic rock paper scissor game that takes command line arguments and determines which player wins. However I also created the makefile that allowed me to compile a header file and two cc files. The link to this repository is [here.][def]
 
 [def]: https://github.com/jlinares12/RockPaperScissors.git
