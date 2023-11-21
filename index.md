@@ -24,3 +24,11 @@ My GitHub page is http://github.com/jlinares12.
 * Lab 6
 
     Lab 6, part 2 also holds a special place in my heart because it was the first time I made a game that was slightly more complex than rock paper scissors or a hilo game. During this lab I learned how Blackjack works and I also learned the importance of how to convert variable types specifically string to integers. I also felt that this project was challenging and the reward of solving it was a bonus.
+
+## Personal Projects
+
+### Rock Paper Scissors
+
+* This was a personal project that I did on my own time. The purpose of this project was to get more exposure to makefiles. The program is a basic rock paper scissor game that takes command line arguments and determines which player wins. However I also created the makefile that allowed me to compile a header file and two cc files. The link to this repository is [here][def]
+
+[def]: https://github.com/jlinares12/RockPaperScissors.git
