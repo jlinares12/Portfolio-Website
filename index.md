@@ -9,7 +9,6 @@ My GitHub page is http://github.com/jlinares12.
 ### CPSC 120
 
 *Lab 9
-    
     Lab 9, part 2 was a favorite because it made me call back to things, we learned early in the semester. I was forced to remember that std::string is considered a vector and that when the function .at() can throw an exception. I also really like this lab because it was the first time I was able to catch an exception in my own code and deal with a std::out_range_error.
 
 *Lab 7
