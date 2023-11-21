@@ -1,4 +1,4 @@
-<hi style = "background-color : DodgerBlue;># Hello World
+<span style = "background-color : DodgerBlue;> some # Hello World text</span>
 
 This is my home page! My name is Juan Linares and I am a student at [Cal State Fullerton](http://www.fullerton.edu/) and my major is Computer Science.
 <details>
