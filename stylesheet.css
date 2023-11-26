@@ -30,10 +30,20 @@ section {
     padding: 100px 20vw;
 }
 
-.blue {
+.backBlue {
     background: #0b00a1;
 }
 
-.gray {
+.backGrey {
     background: darkslategray;
+}
+
+.txtOrange {
+    color: orange;
+}
+
+.center {
+    position: absolute;
+    top: .5;
+    transform: translate(0,-.5);
 }
