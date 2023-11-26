@@ -1,0 +1,39 @@
+body {
+    font-family: sans-serif;
+    color: white;
+    background-color: black;
+}
+
+h1 {
+    color: darkgreen;
+    text-align: center;
+    font-size: 75px;
+}
+
+h2 {
+    font-size: 45px;
+}
+
+summary {
+    width: 274px;
+    border: 5px darkblue;
+    padding: 10px;
+    border-style: double;
+}
+
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+    padding: 100px 20vw;
+}
+
+.blue {
+    background: #0b00a1;
+}
+
+.gray {
+    background: darkslategray;
+}
