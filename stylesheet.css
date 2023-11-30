@@ -33,13 +33,55 @@ section {
 }
 
 .backBlue {
-    background: #0b00a1;
+    background: #36454F;
 }
 
 .backGrey {
-    background: darkslategray;
+    background: #7393B3;
 }
 
 .txtOrange {
     color: orange;
+}
+
+.wave1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.wave svg {
+    position: relative;
+    display: block;
+    width: calc(127% + 1.3px);
+    height: 161px;
+    transform: rotateY(180deg);
+}
+
+.wave .shape-fill {
+    fill: black;
+}
+
+.wave2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave2 svg {
+    position: relative;
+    display: block;
+    width: calc(101% + 1.3px);
+    height: 139px;
+}
+
+.wave2 .shape-fill {
+    fill: #7393B3;
 }
