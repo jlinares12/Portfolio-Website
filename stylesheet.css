@@ -44,26 +44,6 @@ section {
     color: orange;
 }
 
-.wave2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-}
-
-.wave2 svg {
-    position: relative;
-    display: block;
-    width: calc(101% + 1.3px);
-    height: 139px;
-}
-
-.wave2 .shape-fill {
-    fill: #7393B3;
-}
-
 .spacer {
     aspect-ratio: 960/300;
     width: 100%;
