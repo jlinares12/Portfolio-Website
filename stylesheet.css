@@ -75,3 +75,7 @@ section {
 .layer1 {
     background-image: url('./layer1.svg');
 }
+
+.layer2 {
+    background-image: url('./layer2.svg');
+}
