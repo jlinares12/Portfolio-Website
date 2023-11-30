@@ -44,28 +44,6 @@ section {
     color: orange;
 }
 
-.wave1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-}
-
-.wave svg {
-    position: relative;
-    display: block;
-    width: calc(127% + 1.3px);
-    height: 161px;
-    transform: rotateY(180deg);
-}
-
-.wave .shape-fill {
-    fill: black;
-}
-
 .wave2 {
     position: absolute;
     top: 0;
@@ -84,4 +62,16 @@ section {
 
 .wave2 .shape-fill {
     fill: #7393B3;
+}
+
+.spacer {
+    aspect-ratio: 960/300;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.layer1 {
+    background-image: url('./layer1.svg');
 }
