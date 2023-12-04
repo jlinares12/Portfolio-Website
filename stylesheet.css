@@ -22,6 +22,7 @@ summary {
     border: 1px orange;
     padding: 10px;
     border-style: double;
+    cursor: pointer;
 }
 
 section {
@@ -33,11 +34,11 @@ section {
     padding: 100px 20vw;
 }
 
-.backBlue {
+.blueGrey {
     background: #36454F;
 }
 
-.backGrey {
+.lightblueGrey {
     background: #7393B3;
 }
 
