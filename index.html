@@ -1,103 +1,121 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<title>Juan Linares Portfolio</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="stylesheet.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="index.css">
+    <title>Juan Linares Portfolio</title>
 </head>
+<body onscroll="scrollFunction()">
+    <header id="header">
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="theme-toggle logo" id="checkbox">
+                <img class="theme-icon" src="/icons/moon.svg">
+            </div>
+        </nav>
+    </header>
+    <div class="floating-sidebar" id="sidebar">
+        <a class="socials-link" href="https://github.com/jlinares12" target="_blank">
+            <img class="logo" src="logos/github/github.svg">
+        </a>
+        <a class="socials-link" href="https://www.linkedin.com/in/jlinares0115/" target="_blank">
+            <img class="logo" src="logos/in-logo/linkedin.svg">
+        </a>
+    </div>
+    <main>
+        <div class="home">
+            <div class="home-content">
+                <h1><span id="home" class="anchor"></span>Hey! I'm <span class="h1-accent">Juan Linares</span></h1>
+                <p>Entry level software developer from Peru! 🇵🇪<br>
+                I love developing fullstack web apps and mobile apps.
+                During my free time I like to read and strum silly chord progression on my guitar</p>
+                <div class="socials">
+                    <a href="files/Resume.pdf" target="_blank">
+                        <button class="resume-btn">
+                            <span><b>Resume</b></span>
+                            <img class="logo" src="icons/file-regular.svg">
+                        </button>
+                    </a>
+                    <a id="modalBtn">
+                        <button class="about-btn">
+                            <img class="logo" src="icons/info.svg">
+                            <span><b>About Me</b></span>
+                        </button>
+                    </a>
+                    <a class="socials-link" href="https://github.com/jlinares12" target="_blank">
+                        <img class="logo" src="logos/github/github.svg">
+                    </a>
+                    <a class="socials-link" href="https://www.linkedin.com/in/jlinares0115/" target="_blank">
+                        <img class="logo" src="logos/in-logo/linkedin.svg">
+                    </a>
+                </div>
+            </div>
+            <div class="selfie-container">
+                <img class="selfie" src="imgs/selfie.jpeg">
+            </div>
+        </div>
+        <div id="myModal" class="modal">
 
-<body>
-	<section>
-		<IMG SRC="output.gif">
-		<p>This is my home page! My name is Juan Linares and I am a student at
-			<a class="txtOrange" href="https://www.fullerton.edu/"
-			target="_blank">
-				Cal State Fullerton</a>
-			and my major is Computer Science.
-		</p>
-		<details>
-			<summary><b>Get to know more about me!</b></summary>
-			<br>
-			I am a first gen undergraduate college student. I immigrated from Peru to
-			the United States with my dad and sister when I was 2 years old. Since I
-			moved to the US at such a young age I consider myself a Californian.
-			For fun I love to play video games, go on hikes and make music. I also LOVE
-			eating different cuisines. Some of my favorites are Indian food, Filipino
-			food, and obviously Peruvian food. I am currently looking for internships
-			that can help me expand my knowledge and experience in Computer Science.
-			Thank you for visiting my site.
-		</details>
-	</section>
-	<div class="spacer layer1"></div>
-	<section class="lightblueGrey">
-		<br><br>
-		<h2>Computer Science Projects</h2>
-		<p>My GitHub page is <a class="txtOrange" href="http://github.com/jlinares12/">http://github.com/jlinares12</a>.
-		</p>
+            <!-- Modal content -->
+            <div class="modal-content about card">
+                <div class="about card-content">
+                    <span class="close">&times;</span>
+                        <h1><span id="about" class="anchor"></span>About Me</h1>
+                        <p>I am a first gen undergraduate college student.
+                        I immigrated from Peru to the United States with my dad and sister when I was 2 years old.
+                        Since I moved to the US at such a young age I consider myself a Californian.
+                        For fun I love to play video games, go on hikes and make music. I also LOVE eating different cuisines.
+                        Some of my favorites are Indian food, Filipino food, and obviously Peruvian food.
+                        I am currently looking for internships that can help me expand my knowledge and experience in Computer Science.
+                        Thank you for visiting my site. </p>
+                </div>
+            </div>
+        </div>
 
-		<h3>CPSC 120 - Introduction to Programming</h3>
-		<ul style="list-style-type:circle">
-			<li>Lab 6</li>
-		</ul>
-		<p>
-			<a class="txtOrange" href="https://github.com/cpsc-fall-2023/cpsc-120-lab-06-ben-and-juan.git">Lab 6, part
-				2</a>
-			also holds a special
-			place in my heart because it was
-			the first time I made a game that was slightly more complex than rock
-			paper scissors or a hilo game. During this lab I learned how Blackjack
-			works and I also learned the importance of how to convert variable
-			types, specifically string to integers. I also felt that this project
-			was challenging and the reward of solving it was a bonus.
-		</p>
-		<ul style="list-style-type:circle">
-			<li>Lab 7</li>
-		</ul>
-		<p>
-			<a class="txtOrange" href="https://github.com/cpsc-fall-2023/cpsc-120-lab-07-juan-subash.git">Lab 7, part
-				2</a>
-			is another favorite
-			because it was the first program I
-			wrote that I could see would have real-world use. Figuring out where
-			and when I can park within a city is a useful tool and being able to
-			code a program that helps with this made me feel proud. In this program
-			I had to figure out how to carefully use nested if statements.
-		</p>
-		<ul style="list-style-type:circle">
-			<li>Lab 6</li>
-		</ul>
-		<p>
-			<a class="txtOrange" href="https://github.com/cpsc-fall-2023/cpsc-120-lab-12-juan-and-kyle.git">Lab 12, part
-				2</a>
-			is the last project I want to discuss. It was the first time that we dealt with colors and it challanged me
-			to think about how each color in the RGB-color model would interact with eachother. I also enjoyed this lab
-			because it taught me a new way to use vectors in my programs. I added the gif to the top of this webpage.
-		</p>
-
-	</section>
-	<div class="spacer layer2"></div>
-	<section class="blueGrey">
-		<br><br>
-		<h2>Personal Projects</h2>
-		<h3>Rock Paper Scissors</h3>
-		<ul style="list-style-type:circle">
-			<li>
-				This was a personal project that I did on my own time. The purpose of
-				this project was to get more exposure to makefiles. The program is a
-				basic rock paper scissor game that takes command line arguments and
-				determines which player wins. However I also created the makefile that
-				allowed me to compile a header file and two cc files. The link to this
-				repository is
-				<a class="txtOrange" href="https://github.com/jlinares12/RockPaperScissors.git">here</a>.
-			</li>
-		</ul>
-	</section>
+        <div class="skills card">
+            <div class="skills card-content">
+                <h1><span id="skills" class="anchor"></span>Skills</h1>
+            </div>
+        </div>
+        <h1>Some Text For Scrolling</h1>
+        <h1>Some Text For Scrolling</h1>
+        <h1>Some Text For Scrolling</h1>
+        <h1>Some Text For Scrolling</h1>
+        <h1>Some Text For Scrolling</h1>
+        <h1>Some Text For Scrolling</h1>
+        <h1>Some Text For Scrolling</h1>
+        <h1>Some Text For Scrolling</h1>
+        <h1>Some Text For Scrolling</h1>
+        <h1>Some Text For Scrolling</h1>
+        <h1>Some Text For Scrolling</h1>
+        <h1>Some Text For Scrolling</h1>
+        <h1>Some Text For Scrolling</h1>
+        <h1>Some Text For Scrolling</h1>
+        <h1>Some Text For Scrolling</h1>
+        <h1>Some Text For Scrolling</h1>
+        <h1>Some Text For Scrolling</h1>
+        <h1>Some Text For Scrolling</h1>
+        <h1>Some Text For Scrolling</h1>
+        <h1>Some Text For Scrolling</h1>
+    </main>
+    <script src="js/navUpdate.js"></script>
+    <script src="js/scrollAnimation.js"></script>
+    <script src="js/darkTheme.js"></script>
+    <script src="js/modalView.js"></script>
 </body>
-
 </html>
