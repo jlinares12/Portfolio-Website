@@ -1,14 +1,17 @@
 :root {
     --font-family: 'DM Sans';
-    --icon-width: 50px;
-    --icon-height: 20px;
+    --svg-width: 20px; /* Standard width for all SVGs */
+    --svg-height: 20px; /* Standard height for all SVGs */
     --hue-color: 15;
 
     /*------------------ Text Colors ------------------*/
     --accent-color: hsl(var(--hue-color), 85%, 54%);
-    --filter-s-color: invert(45%) sepia(94%) saturate(2725%) hue-rotate(346deg) brightness(96%) contrast(94%);
+    --filter-accent-color: invert(45%) sepia(94%) saturate(2725%) hue-rotate(346deg) brightness(96%) contrast(94%);
+    --filter-primary-color: brightness(0) saturate(100%) invert(0%) sepia(97%) saturate(7482%) hue-rotate(36deg) brightness(97%) contrast(95%);
+    --filter-secondary-color: brightness(0) saturate(100%) invert(48%) sepia(0%) saturate(0%) hue-rotate(172deg) brightness(92%) contrast(77%);;
     --primary-color:black;
-    --secondary-color: #646464;
+    --secondary-color: #03263a;
+    --third-color: #747474;
     --email-body-color: red;
     --bk-color: #FFFF;
     --header-color:hsla(0, 0%, 100%, 0.5);
@@ -16,11 +19,13 @@
 
 body.dark {
     --bk-hue: 202;
-    --bk-color: hsl(var(--bk-hue), 90%, 12%);
+    --bk-color: hsl(202, 90%, 12%);
     --header-color:hsl(var(--bk-hue), 90%, 12%, 0.5);
     --primary-color: white;
-    --secondary-color: #8fb5c0;
-    --filter-p-color: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(360deg) brightness(105%) contrast(102%);
+    --secondary-color: #84cbdf;
+    --third-color: #505d7a;
+    --filter-primary-color: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(360deg) brightness(105%) contrast(102%);
+    --filter-secondary-color: brightness(0) saturate(100%) invert(36%) sepia(15%) saturate(868%) hue-rotate(183deg) brightness(95%) contrast(91%);
 }
 
 body {
@@ -75,7 +80,7 @@ header {
 .nav-link {
     text-decoration: none;
     font-weight: bold;
-    color:var(--secondary-color);
+    color:var(--third-color);
 }
 
 .nav-link:hover {
@@ -101,19 +106,25 @@ header {
 }
 
 .logo {
-    max-width: var(--icon-width);
-    max-height: var(--icon-height);
-    filter: var(--filter-p-color)
+    width: var(--svg-width);
+    height: var(--svg-height);
+    filter: var(--filter-secondary-color);
+    object-fit: contain; /* Ensures aspect ratio is maintained */
 }
 
 .logo:hover {
-    filter: var(--filter-s-color);
+    filter: var(--filter-accent-color);
 }
 
 .theme-icon {
-    width: var(--icon-width);
-    height: var(--icon-height);
+    width: var(--svg-width);
+    height: var(--svg-height);
     cursor: pointer;
+    filter: var(--filter-secondary-color);
+}
+
+.theme-icon:hover {
+    filter: var(--filter-accent-color);
 }
 
 .home {
@@ -172,7 +183,7 @@ p {
     align-items: center;
     justify-content: center;
     background-color: var(--bk-color);
-    color: var(--secondary-color);
+    color: var(--primary-color);
     border: none;
     box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
     white-space: nowrap;
@@ -187,8 +198,12 @@ p {
     color: var(--accent-color);
 }
 
+.resume-btn .logo {
+    filter: var(--filter-primary-color);
+}
+
 .resume-btn:hover .logo {
-    filter: var(--filter-s-color);
+    filter: var(--filter-accent-color);
 }
 
 .about-btn {
@@ -196,7 +211,7 @@ p {
     align-items: center;
     justify-content: center;
     background-color: var(--bk-color);
-    color: var(--secondary-color);
+    color: var(--third-color);
     border: none;
     white-space: nowrap;
     border-radius: 8px;
@@ -210,7 +225,7 @@ p {
 }
 
 .about-btn:hover .logo {
-    filter: var(--filter-s-color);
+    filter: var(--filter-accent-color);
 }
 
 .floating-sidebar {
