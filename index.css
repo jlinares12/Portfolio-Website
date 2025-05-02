@@ -1,0 +1,316 @@
+:root {
+    --font-family: 'DM Sans';
+    --icon-width: 50px;
+    --icon-height: 20px;
+    --hue-color: 15;
+
+    /*------------------ Text Colors ------------------*/
+    --accent-color: hsl(var(--hue-color), 85%, 54%);
+    --filter-s-color: invert(45%) sepia(94%) saturate(2725%) hue-rotate(346deg) brightness(96%) contrast(94%);
+    --primary-color:black;
+    --secondary-color: #646464;
+    --email-body-color: red;
+    --bk-color: #FFFF;
+    --header-color:hsla(0, 0%, 100%, 0.5);
+}
+
+body.dark {
+    --bk-hue: 202;
+    --bk-color: hsl(var(--bk-hue), 90%, 12%);
+    --header-color:hsl(var(--bk-hue), 90%, 12%, 0.5);
+    --primary-color: white;
+    --secondary-color: #8fb5c0;
+    --filter-p-color: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(360deg) brightness(105%) contrast(102%);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-family);
+    width: clamp(300px, 90%, 725px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    background-color: var(--bk-color);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    position: sticky;
+    z-index: 50;
+    top: 0;
+    background-color: var(--header-color);
+    backdrop-filter: blur(10px);
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    left: 0;
+}
+
+.shadow {
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    width: clamp(300px, 90%, 725px);
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.navbar-list {
+    display: flex;
+    padding: 0;
+    gap: 2rem;
+    height: 25px;
+    list-style: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-weight: bold;
+    color:var(--secondary-color);
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link.active {
+    color: var(--accent-color);
+}
+
+.socials-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.socials-link:hover {
+    color: var(--accent-color);
+}
+
+.theme-toggle {
+    margin-left: auto;
+}
+
+.logo {
+    max-width: var(--icon-width);
+    max-height: var(--icon-height);
+    filter: var(--filter-p-color)
+}
+
+.logo:hover {
+    filter: var(--filter-s-color);
+}
+
+.theme-icon {
+    width: var(--icon-width);
+    height: var(--icon-height);
+    cursor: pointer;
+}
+
+.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding:0.5rem 1rem 0.5rem 1rem;
+}
+
+h1 {
+    position: relative;
+    color: var(--primary-color);
+}
+
+h1 .anchor {
+    position: absolute;
+    top: -125px;
+}
+
+.h1-accent {
+    color:var(--accent-color);
+}
+
+p {
+    color: var(--secondary-color);
+}
+
+.selfie-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selfie {
+    object-fit: cover;
+    width: 175px;
+    height: 175px;
+    border-radius: 8px;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.socials-link {
+    display: flex;
+    align-self: center;
+    height: var(--icon-height);
+}
+
+.resume-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bk-color);
+    color: var(--secondary-color);
+    border: none;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    white-space: nowrap;
+    border-radius: 8px;
+    padding: 8px 16px 8px 16px;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.resume-btn:hover {
+    background-color: rgba(239, 226, 226, 0.25);
+    color: var(--accent-color);
+}
+
+.resume-btn:hover .logo {
+    filter: var(--filter-s-color);
+}
+
+.about-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bk-color);
+    color: var(--secondary-color);
+    border: none;
+    white-space: nowrap;
+    border-radius: 8px;
+    padding: 8px 0 8px 0;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.about-btn:hover {
+    color: var(--accent-color);
+}
+
+.about-btn:hover .logo {
+    filter: var(--filter-s-color);
+}
+
+.floating-sidebar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    top: 30%;
+    right: 75%;
+    background-color: var(--bk-color);
+    opacity: 0;
+    transform: translateX(-10px);
+    visibility: hidden;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, visibility 0.5s ease-out;
+    will-change: transform, opacity;
+}
+
+ /* The Modal (background) */
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0);
+    transition: background-color 300ms ease-in-out;
+    pointer-events: none; /* This prevents clicks when hidden */
+    padding-top: 15% ;
+}
+
+.modal.active {
+    background-color: rgba(0,0,0,0.4);
+    pointer-events: auto; /* Allow clicks when active */
+}
+
+.modal-content {
+    background-color: var(--bk-color);
+    margin: 15% auto;
+    width: 60%;
+    transform: translateY(-20px);
+    transition: all 300ms ease-in-out;
+    opacity: 0;
+}
+
+.modal-content.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.modal-content.active > .card-content {
+    opacity: 1;
+}
+
+/* The Close Button */
+.close {
+    color: var(--secondary-color);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.floating-sidebar.start {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about {
+    margin-top: 2rem;
+}
+
+.card-content {
+    margin: 0;
+    padding:0.5rem 1rem 0.5rem 1rem;
+}
+
+.card {
+    margin-top: 2rem;
+    border-radius: 15px;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+@media (max-width:610px) {
+    .navbar-list {
+        gap: 1rem;
+    }
+}
+
+@media (max-width:460px) {
+    .navbar-list {
+        gap: 0.5rem;
+    }
+}
