@@ -2,6 +2,8 @@
     --font-family: 'DM Sans';
     --svg-width: 20px; /* Standard width for all SVGs */
     --svg-height: 20px; /* Standard height for all SVGs */
+    --svg-skills-width: 48px;
+    --svg-skills-height: 48px;
     --hue-color: 15;
 
     /*------------------ Text Colors ------------------*/
@@ -316,6 +318,24 @@ p {
     margin-top: 2rem;
     border-radius: 15px;
     box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+.skills-title {
+    text-align: center;
+}
+
+.skills-logos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.skills-logo {
+    max-width: var(--svg-skills-width);
+    max-height: var(--svg-skills-height);
+    object-fit: contain;
 }
 
 @media (max-width:610px) {
