@@ -2,12 +2,13 @@
     --font-family: 'DM Sans';
     --svg-width: 20px; /* Standard width for all SVGs */
     --svg-height: 20px; /* Standard height for all SVGs */
-    --svg-skills-width: 48px;
-    --svg-skills-height: 48px;
+    --svg-skills-width: 36px;
+    --svg-skills-height: 36px;
     --hue-color: 15;
 
     /*------------------ Text Colors ------------------*/
     --accent-color: hsl(var(--hue-color), 85%, 54%);
+    --skills-pill-color: hsl(var(--hue-color), 85%, 88%);
     --filter-accent-color: invert(45%) sepia(94%) saturate(2725%) hue-rotate(346deg) brightness(96%) contrast(94%);
     --filter-primary-color: brightness(0) saturate(100%) invert(0%) sepia(97%) saturate(7482%) hue-rotate(36deg) brightness(97%) contrast(95%);
     --filter-secondary-color: brightness(0) saturate(100%) invert(48%) sepia(0%) saturate(0%) hue-rotate(172deg) brightness(92%) contrast(77%);;
@@ -320,8 +321,16 @@ p {
     box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
 }
 
+.skills.card {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .skills-title {
     text-align: center;
+    margin: 0;
+    padding:0.5rem 1rem 0 1rem;
 }
 
 .skills-logos {
@@ -336,6 +345,43 @@ p {
     max-width: var(--svg-skills-width);
     max-height: var(--svg-skills-height);
     object-fit: contain;
+}
+
+.skills.card-content {
+    display: flex;
+    flex-direction: row;
+    padding:0 1rem 0.5rem 1rem;
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 2rem;
+}
+
+.skill-row {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.skills-logo-pill {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 4rem;
+    background-color: var(--skills-pill-color);
+    border-radius: 15px;
+}
+.skills-logo-pill p {
+    font-weight: bold;
+    margin: 0;
+    color: var(--accent-color);
+}
+
+.stats {
+    width: 50%;
 }
 
 @media (max-width:610px) {
