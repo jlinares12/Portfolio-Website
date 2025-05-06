@@ -41,11 +41,11 @@
         </a>
     </div>
     <main>
-        <div class="home">
+        <hero class="home">
             <div class="home-content">
                 <h1><span id="home" class="anchor"></span>Hey! I'm <span class="h1-accent">Juan Linares</span></h1>
-                <p>Entry level software developer from Peru! 🇵🇪<br>
-                I love developing fullstack web apps and mobile apps.
+                <p>A Computer Science college student attending California State University, Fullerton.
+                I love developing fullstack web apps and mobile apps but my true passion is backend development.
                 During my free time I like to read and strum silly chord progression on my guitar</p>
                 <div class="socials">
                     <a href="files/Resume.pdf" target="_blank">
@@ -74,7 +74,8 @@
             <div class="selfie-container">
                 <img class="selfie" src="imgs/selfie.jpeg">
             </div>
-        </div>
+        </hero>
+
         <div id="myModal" class="modal">
 
             <!-- Modal content -->
@@ -93,63 +94,88 @@
             </div>
         </div>
 
-        <div class="skills card">
-            <h1 class="skills-title"><span id="skills" class="anchor"></span>Skills</h1>
-            <div class="skills card-content">
-                <div class="skills-container">
-                    <div class="skill-row languages">
-                        <label>Languages</label>
-                        <div class="skills-logo-pill lang">
-                            <p>C++</p>
-                        </div>
-                        <div class="skills-logo-pill lang">
-                            <p>Python</p>
-                        </div>
-                    </div>
-                    <div class="skill-row frameworks">
-                        <label>Frameworks</label>
-                        <div class="skills-logo-pill frame">
-                            <p>Flask</p>
-                        </div>
-                    </div>
-                    <div class="skill-row databases">
-                        <label>Databases</label>
-                        <div class="skills-logo-pill db">
-                            <p>SQLite</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="stats">
-                    <div class="years">
+        <div class="skills title">
+            <h1><span id="skills" class="anchor"></span>Skills</h1>
+            <p>Hover a skill to see its stats or click on one to see what project it's used in</p>
+        </div>
 
+        <div class="skills-container card">
+            <h2 class="skills-inner-title">Skills Bank</h2>
+            <div class="skills-container-wrapper">
+                <div class="skills-logo-pill lang">
+                    <a id="cpp" onmouseenter="updateStat(this)" onmouseleave="updateStatRemove()">
+                        <img class="skills-logo" src="/logos/skills/cpp.svg">
+                        <p>C++</p>
+                    </a>
+                </div>
+                <div class="skills-logo-pill lang">
+                    <a id="python" onmouseenter="updateStat(this)" onmouseleave="updateStatRemove()">
+                        <img class="skills-logo" src="/logos/skills/python.svg">
+                        <p>Python</p>
+                    </a>
+                </div>
+                <div class="skills-logo-pill lang">
+                    <a id="html" onmouseenter="updateStat(this)" onmouseleave="updateStatRemove()">
+                        <img class="skills-logo" src="/logos/skills/html5.svg">
+                        <p>HTML 5</p>
+                    </a>
+                </div>
+                <div class="skills-logo-pill lang">
+                    <a id="css" onmouseenter="updateStat(this)" onmouseleave="updateStatRemove()">
+                        <img class="skills-logo" src="/logos/skills/css3.svg">
+                        <p>CSS 3</p>
+                    </a>
+                </div>
+                <div class="skills-logo-pill lang">
+                    <a id="flask" onmouseenter="updateStat(this)" onmouseleave="updateStatRemove()">
+                        <img class="skills-logo" src="/logos/skills/flask.svg">
+                        <p>Flask</p>
+                    </a>
+                </div>
+                <div class="skills-logo-pill lang">
+                    <a id="sqlite" onmouseenter="updateStat(this)" onmouseleave="updateStatRemove()">
+                        <img class="skills-logo" src="/logos/skills/sqlite.svg">
+                        <p>SQLite</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="stats-container">
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span id="bar-title">Skill</span>
+                    </div>
+                    <div class="container">
+                        <div class="stat">&nbsp;</div>
                     </div>
                 </div>
             </div>
         </div>
-        <h1>Some Text For Scrolling</h1>
-        <h1>Some Text For Scrolling</h1>
-        <h1>Some Text For Scrolling</h1>
-        <h1>Some Text For Scrolling</h1>
-        <h1>Some Text For Scrolling</h1>
-        <h1>Some Text For Scrolling</h1>
-        <h1>Some Text For Scrolling</h1>
-        <h1>Some Text For Scrolling</h1>
-        <h1>Some Text For Scrolling</h1>
-        <h1>Some Text For Scrolling</h1>
-        <h1>Some Text For Scrolling</h1>
-        <h1>Some Text For Scrolling</h1>
-        <h1>Some Text For Scrolling</h1>
-        <h1>Some Text For Scrolling</h1>
-        <h1>Some Text For Scrolling</h1>
-        <h1>Some Text For Scrolling</h1>
-        <h1>Some Text For Scrolling</h1>
-        <h1>Some Text For Scrolling</h1>
-        <h1>Some Text For Scrolling</h1>
-        <h1>Some Text For Scrolling</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
     </main>
     <script src="js/navUpdate.js"></script>
     <script src="js/scrollAnimation.js"></script>
     <script src="js/darkTheme.js"></script>
     <script src="js/modalView.js"></script>
+    <script src="js/statsUpdate.js"></script>
 </body>
 </html>

@@ -4,11 +4,12 @@
     --svg-height: 20px; /* Standard height for all SVGs */
     --svg-skills-width: 36px;
     --svg-skills-height: 36px;
+    --skills-pill-width: 50px;
+    --skills-pill-height: 50px;
     --hue-color: 15;
 
     /*------------------ Text Colors ------------------*/
     --accent-color: hsl(var(--hue-color), 85%, 54%);
-    --skills-pill-color: hsl(var(--hue-color), 85%, 88%);
     --filter-accent-color: invert(45%) sepia(94%) saturate(2725%) hue-rotate(346deg) brightness(96%) contrast(94%);
     --filter-primary-color: brightness(0) saturate(100%) invert(0%) sepia(97%) saturate(7482%) hue-rotate(36deg) brightness(97%) contrast(95%);
     --filter-secondary-color: brightness(0) saturate(100%) invert(48%) sepia(0%) saturate(0%) hue-rotate(172deg) brightness(92%) contrast(77%);;
@@ -17,12 +18,14 @@
     --third-color: #747474;
     --email-body-color: red;
     --bk-color: #FFFF;
+    --muted-bk-color: rgba(230, 233, 240);
     --header-color:hsla(0, 0%, 100%, 0.5);
 }
 
 body.dark {
     --bk-hue: 202;
-    --bk-color: hsl(202, 90%, 12%);
+    --bk-color: rgb(3, 38, 58);
+    --muted-bk-color: rgba(0, 20, 31, 0.25);
     --header-color:hsl(var(--bk-hue), 90%, 12%, 0.5);
     --primary-color: hsl(0, 0%, 100%);
     --secondary-color: #84cbdf;
@@ -140,12 +143,14 @@ header {
 
 h1 {
     position: relative;
+    font-size: 3rem;
+    margin: 0;
     color: var(--primary-color);
 }
 
 h1 .anchor {
     position: absolute;
-    top: -125px;
+    top: -85px;
 }
 
 .h1-accent {
@@ -316,91 +321,95 @@ p {
 }
 
 .card {
-    margin-top: 2rem;
     border-radius: 15px;
+    background-color: var(--bk-color);
     box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
 }
 
-.skills.card {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+.title {
+    text-align: start;
+    margin: 4rem 1rem 1rem;
 }
 
-.skills-title {
-    text-align: center;
+.title p {
     margin: 0;
-    padding:0.5rem 1rem 0 1rem;
 }
 
-.skills-logos {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+.skills-inner-title {
+    text-align: center;
+    color: var(--primary-color);
 }
 
 .skills-logo {
     max-width: var(--svg-skills-width);
     max-height: var(--svg-skills-height);
-    object-fit: contain;
-}
-
-.skills.card-content {
-    display: flex;
-    flex-direction: row;
-    padding:0 1rem 0.5rem 1rem;
+    object-fit: fill;
 }
 
 .skills-container {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
     gap: 2rem;
+    margin: 0.5rem;
+    padding: 0;
 }
 
-.skill-row {
-    position: relative;
+.skills-container-wrapper {
     display: flex;
-    flex-direction: row;
-    padding: 1rem 0;
-    box-shadow:
-        0 0 5px 0 hsl(from var(--primary-color) h s l / 10%),
-        0 0 1px 0 hsl(from var(--primary-color) h s l / 10%);
-    border-radius: 15px;
-}
-
-.skill-row > label {
-    position: absolute;
-    top: -0.5rem;
-    z-index: 1;
-    left: 2em;
-    font-size: 12px;
-    background-color: var(--bk-color);
-    color: var(--primary-color);
-    padding: 0 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+    gap: 2rem;
 }
 
 .skills-logo-pill {
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 4rem;
-    background-color: var(--skills-pill-color);
+    width: 3rem;
+    height: 4rem;
     border-radius: 50px;
-    margin-left: 1rem;
 }
 
 .skills-logo-pill p {
     font-weight: bold;
     font-size: 12px;
     margin: 0;
-    color: var(--accent-color);
+    color: var(--primary-color);
 }
 
-.stats {
-    width: 50%;
+.stats-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    padding: 1rem;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.container {
+    height: 20px;
+    background-color: var(--muted-bk-color);
+    border-radius: 10px;
+    width: 100%;
+}
+
+.stat {
+    text-align: right;
+    padding-right: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 20px;
+    border-radius: 10px;
+    width: 0%;
+    background-color: var(--muted-bk-color);
+    transition: width 0.5s ease-in-out;
 }
 
 @media (max-width:610px) {

@@ -7,7 +7,7 @@ function scrollFunction() {
     }
 
     let sidebar = document.getElementById('sidebar');
-    var skillsSection = document.querySelector('.skills');
+    var skillsSection = document.querySelector('.skills.title');
 
     if (skillsSection) {
         var top = skillsSection.getBoundingClientRect().top + 90;
