@@ -12,7 +12,7 @@
     --filter-accent-color: invert(45%) sepia(94%) saturate(2725%) hue-rotate(346deg) brightness(96%) contrast(94%);
     --filter-primary-color: brightness(0) saturate(100%) invert(0%) sepia(97%) saturate(7482%) hue-rotate(36deg) brightness(97%) contrast(95%);
     --filter-secondary-color: brightness(0) saturate(100%) invert(48%) sepia(0%) saturate(0%) hue-rotate(172deg) brightness(92%) contrast(77%);;
-    --primary-color:black;
+    --primary-color:hsl(0, 0%, 0%);
     --secondary-color: #03263a;
     --third-color: #747474;
     --email-body-color: red;
@@ -24,7 +24,7 @@ body.dark {
     --bk-hue: 202;
     --bk-color: hsl(202, 90%, 12%);
     --header-color:hsl(var(--bk-hue), 90%, 12%, 0.5);
-    --primary-color: white;
+    --primary-color: hsl(0, 0%, 100%);
     --secondary-color: #84cbdf;
     --third-color: #505d7a;
     --filter-primary-color: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(360deg) brightness(105%) contrast(102%);
@@ -361,9 +361,25 @@ p {
 }
 
 .skill-row {
+    position: relative;
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    padding: 1rem 0;
+    box-shadow:
+        0 0 5px 0 hsl(from var(--primary-color) h s l / 10%),
+        0 0 1px 0 hsl(from var(--primary-color) h s l / 10%);
+    border-radius: 15px;
+}
+
+.skill-row > label {
+    position: absolute;
+    top: -0.5rem;
+    z-index: 1;
+    left: 2em;
+    font-size: 12px;
+    background-color: var(--bk-color);
+    color: var(--primary-color);
+    padding: 0 5px;
 }
 
 .skills-logo-pill {
@@ -372,10 +388,13 @@ p {
     text-align: center;
     width: 4rem;
     background-color: var(--skills-pill-color);
-    border-radius: 15px;
+    border-radius: 50px;
+    margin-left: 1rem;
 }
+
 .skills-logo-pill p {
     font-weight: bold;
+    font-size: 12px;
     margin: 0;
     color: var(--accent-color);
 }
