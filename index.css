@@ -256,15 +256,25 @@ p {
     position: fixed;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     top: 30%;
-    right: 75%;
-    background-color: var(--bk-color);
+    left: 5%;
+    padding: 1rem;
+    border-radius: 8px;
     opacity: 0;
-    transform: translateX(-10px);
+    transform: translateX(-20px);
     visibility: hidden;
     transition: opacity 0.5s ease-out, transform 0.5s ease-out, visibility 0.5s ease-out;
     will-change: transform, opacity;
+    z-index: 1000;
+    max-width: 60px;
+}
+
+/* Show the sidebar */
+.floating-sidebar.start {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
 }
 
  /* The Modal (background) */
@@ -276,7 +286,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     background-color: rgba(0,0,0,0);
     transition: background-color 300ms ease-in-out;
     pointer-events: none; /* This prevents clicks when hidden */
@@ -292,6 +302,7 @@ p {
     background-color: var(--bk-color);
     margin: 15% auto;
     width: 60%;
+    max-width: 710px;
     transform: translateY(-20px);
     transition: all 300ms ease-in-out;
     opacity: 0;
@@ -307,24 +318,20 @@ p {
 }
 
 /* The Close Button */
-.close {
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
     color: var(--secondary-color);
-    float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
-    color: var(--primary-color);
-    text-decoration: none;
+.close-modal:hover,
+.close-modal:focus {
+    color: var(--accent-color);
     cursor: pointer;
-}
-
-.floating-sidebar.start {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(0);
 }
 
 .about {
@@ -613,7 +620,7 @@ p {
 .timeline-item::before {
     content: "";
     position: absolute;
-    left: -13%;
+    left: calc(-30px + -10px + -1.5px);
     top: calc(50% - 10px);
     width: 20px;
     height: 20px;
@@ -641,16 +648,33 @@ p {
     font-size: 12px;
 }
 
-@media (max-width:610px) {
-    .navbar-list {
-        gap: 1rem;
-    }
-}
-
 @media (max-width:460px) {
     .navbar-list {
         gap: 0.5rem;
     }
+}
+
+@media (max-width: 688px) {
+    .navbar-list {
+        gap: 1rem;
+    }
+
+    .home {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .socials {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+
 }
 
 @media (max-width:797px) {
@@ -660,5 +684,35 @@ p {
 
     .project-card {
         width: clamp(300px, 50%, 700px);
+    }
+
+}
+
+@media (max-width: 925px) {
+    .floating-sidebar {
+        position: fixed;
+        flex-direction: row;
+        justify-content: space-around;
+        left: 2.5rem;
+        bottom: 2rem;
+        top: auto;
+        width: auto;
+        max-width: none;
+        padding: 0.5rem;
+        background-color: var(--secondary-bk-color);
+    }
+}
+
+@media (max-width: 1183px) {
+
+    .modal-content {
+        width: 90%;
+    }
+}
+
+@media (min-width: 1440px) {
+    .floating-sidebar {
+        left:auto;
+        right: 75%;
     }
 }
