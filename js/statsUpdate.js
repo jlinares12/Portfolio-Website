@@ -3,6 +3,7 @@ var data ={
     python: ["Python", "33.33%", "1 year"],
     html: ["HTML", "66.66%", "2 years"],
     css: ["CSS", "66.66%", "2 years"],
+    js: ["JavaScript", "33.33%", "1 year"],
     flask: ["Flask", "33.33%", "1 year"],
     sqlite: ["SQLite", "33.33%", "1 year"]
 }
