@@ -825,6 +825,11 @@ input[type="submit"]:hover {
     .contact-form {
         width: auto;
     }
+
+    .connect-info {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 @media (max-width: 925px) {
