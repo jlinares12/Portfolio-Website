@@ -62,5 +62,4 @@ app.post('/send-email', (req, res) => {
   });
 });
 
-// Export for Vercel (critical change)
 module.exports = app;
