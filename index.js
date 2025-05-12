@@ -4,13 +4,17 @@ const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 require("dotenv").config();
 const app = express();
-const port = 3000;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public')); // to serve static files like your HTML
+app.use(express.static('public')); // Serve static files (HTML/CSS/JS)
 
-// Mailjet Transporter
+// Root route (required to fix "Cannot GET /")
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html'); // Replace with your HTML file
+});
+
+// Mailjet Transporter (keep your existing code)
 const transporter = nodemailer.createTransport({
   host: 'in-v3.mailjet.com',
   port: 587,
@@ -21,7 +25,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-// Handle POST request from form
+// Handle POST request from form (keep your existing code)
 app.post('/send-email', (req, res) => {
   const { contact__name, contact__email, contact__message } = req.body;
 
@@ -46,9 +50,5 @@ app.post('/send-email', (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
-
-
-
+// Export for Vercel (critical change)
+module.exports = app;
