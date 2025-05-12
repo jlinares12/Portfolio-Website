@@ -778,15 +778,6 @@ input[type="submit"]:hover {
 }
 
 /* Responsive adjustments */
-@media (max-width: 797px) {
-    .connect-section {
-        flex-direction: column;
-    }
-
-    .connect-info {
-        width: 100%;
-    }
-}
 
 @media (max-width:460px) {
     .navbar-list {
@@ -826,6 +817,14 @@ input[type="submit"]:hover {
         width: clamp(300px, 50%, 700px);
     }
 
+    .connect-section {
+        flex-direction: column;
+    }
+
+    .connect-info,
+    .contact-form {
+        width: auto;
+    }
 }
 
 @media (max-width: 925px) {
