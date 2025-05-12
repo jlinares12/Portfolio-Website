@@ -7,7 +7,15 @@ function scrollFunction() {
     }
 
     let sidebar = document.getElementById('sidebar');
-    var skillsSection = document.querySelector('.skills-container-wrapper');
+    const skillsSection = document.querySelector('.skills-container-wrapper');
+
+    // Check if user has scrolled to bottom
+    const isBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
+
+    if (isBottom) {
+        sidebar.classList.remove('start');
+        return; // Exit early if at bottom
+    }
 
     if (skillsSection) {
         let offset;
@@ -21,7 +29,7 @@ function scrollFunction() {
         } else {
             offset = -85; // for desktops
         }
-        var top = skillsSection.getBoundingClientRect().top + offset;
+        const top = skillsSection.getBoundingClientRect().top + offset;
         if (window.scrollY >= top) {
             sidebar.classList.add('start');
         } else {
