@@ -1,9 +1,21 @@
 "use strict";
 const express = require('express');
+const path = require('path');  // Add this line
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 require("dotenv").config();
 const app = express();
+
+// Serve static files with proper headers
+app.use(express.static(path.join(__dirname, 'public'), {
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith('.css')) {
+      res.setHeader('Content-Type', 'text/css');
+    } else if (filePath.endsWith('.js')) {
+      res.setHeader('Content-Type', 'application/javascript');
+    }
+  }
+}));
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
