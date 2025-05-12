@@ -697,16 +697,33 @@ p {
 
 .contact-form {
     padding: 2rem;
-    width: 75%;
+    width: 60%;
 }
 
 .connect-info {
-    width: 25%;
+    width: 40%;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    justify-content: space-between;
+    gap: 2rem;
+    padding: 0;
+    justify-content: flex-start;
+}
+
+.info-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.info-title h3 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.info-title .logo {
+    filter: var(--filter-accent-color);
 }
 
 .input-section {
@@ -720,7 +737,8 @@ p {
     color: var(--primary-color);
 }
 
-.input-section input {
+.input-section input,
+.input-section textarea {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid var(--muted-bk-color);
@@ -728,10 +746,15 @@ p {
     box-sizing: border-box;
     background-color: var(--muted-bk-color);
     color: var(--primary-color);
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    resize: none;
 }
 
-.input-section input:focus {
+.input-section textarea {
+    height: 150px;
+}
+
+.input-section input:focus,
+.input-section textarea:focus {
     outline: none;
     border-color: var(--accent-color);
     box-shadow: 0 0 0 2px rgba(var(--accent-color), 0.2);
@@ -754,48 +777,12 @@ input[type="submit"]:hover {
     background-color: var(--accent-pill-color);
 }
 
-.connect-details h3,
-.connect-links h3 {
-    color: var(--primary-color);
-    margin-top: 0;
-    margin-bottom: 1rem;
-}
-
-.connect-details p {
-    color: var(--secondary-color);
-    margin: 0.5rem 0;
-}
-
-.connect-links a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--secondary-color);
-    text-decoration: none;
-    margin-bottom: 0.75rem;
-    transition: color 0.3s ease;
-}
-
-.connect-links a:hover {
-    color: var(--accent-color);
-}
-
-.connect-links .logo {
-    width: 20px;
-    height: 20px;
-    filter: var(--filter-secondary-color);
-}
-
-.connect-links a:hover .logo {
-    filter: var(--filter-accent-color);
-}
-
 /* Responsive adjustments */
 @media (max-width: 797px) {
     .connect-section {
         flex-direction: column;
     }
-    
+
     .connect-info {
         width: 100%;
     }
