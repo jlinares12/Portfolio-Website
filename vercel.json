@@ -10,10 +10,6 @@
       {
         "src": "/send-email",
         "dest": "index.js"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/index.html"
       }
     ]
   }
