@@ -21,7 +21,7 @@ First you have to download the code by cloning the github repo. Cd into the dire
 
 After cloning the repository cd into the projects directory and then type the following into your command line
 
-    node -e "require('./index').listen(3000, () => console.log('Server running on http://localhost:3000'));"
+    node index.js
 
 This will open a local port in port 3000. Go to the search engine of your choice and type the following
 

@@ -1,5 +1,5 @@
 "use strict";
-import { inject } from "@vercel/analytics"; // Used to track visitors
+const analytics = require("@vercel/analytics");
 const express = require('express');
 const path = require('path');  // Add this line
 const nodemailer = require('nodemailer');
@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 require("dotenv").config();
 const app = express();
 
-inject();
+analytics.inject();
 // Serve static files with proper headers
 app.use(express.static(path.join(__dirname, 'public'), {
   setHeaders: (res, filePath) => {
@@ -63,5 +63,7 @@ app.post('/send-email', (req, res) => {
     }
   });
 });
+
+app.listen(3000, () => console.log("Server ready on port 3000."));
 
 module.exports = app;
