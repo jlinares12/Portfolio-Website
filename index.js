@@ -80,7 +80,7 @@ app.post('/send-email', async (req, res) => {
 
   try {
     const captchaResult = await verifyCaptcha(captchaToken);
-    if (!captchaResult.success) {
+    if (!captchaResult.success || captchaResult.score < 0.5) {
       return res.status(400).send('CAPTCHA verification failed. Please try again.');
     }
   } catch {
