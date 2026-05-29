@@ -1,9 +1,10 @@
 "use strict";
 const analytics = require("@vercel/analytics");
 const express = require('express');
-const path = require('path');  // Add this line
+const path = require('path');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+const https = require('https');
 require("dotenv").config();
 const app = express();
 
@@ -39,9 +40,52 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+function verifyCaptcha(token) {
+  return new Promise((resolve, reject) => {
+    const params = new URLSearchParams({
+      secret: process.env.SECRET_KEY,
+      response: token
+    }).toString();
+
+    const options = {
+      hostname: 'www.google.com',
+      path: `/recaptcha/api/siteverify?${params}`,
+      method: 'POST'
+    };
+
+    const request = https.request(options, (response) => {
+      let data = '';
+      response.on('data', chunk => data += chunk);
+      response.on('end', () => {
+        try {
+          resolve(JSON.parse(data));
+        } catch {
+          reject(new Error('Invalid response from reCAPTCHA'));
+        }
+      });
+    });
+
+    request.on('error', reject);
+    request.end();
+  });
+}
+
 // Handle POST request from form (keep your existing code)
-app.post('/send-email', (req, res) => {
-  const { contact__name, contact__email, contact__message } = req.body;
+app.post('/send-email', async (req, res) => {
+  const { contact__name, contact__email, contact__message, 'g-recaptcha-response': captchaToken } = req.body;
+
+  if (!captchaToken) {
+    return res.status(400).send('Please complete the CAPTCHA.');
+  }
+
+  try {
+    const captchaResult = await verifyCaptcha(captchaToken);
+    if (!captchaResult.success) {
+      return res.status(400).send('CAPTCHA verification failed. Please try again.');
+    }
+  } catch {
+    return res.status(500).send('Could not verify CAPTCHA. Please try again.');
+  }
 
   const mailOptions = {
     from: 'Juan-Linares-Portfolio@juan-linares.com',
